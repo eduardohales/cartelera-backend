@@ -1,16 +1,30 @@
 // Import configuration file.
-require('./config/config');
+const config = require('./config/config');
 
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const routes = require('./routes/index');
+// Load express configuration
+config.expressConfig(app);
 
-app.use(routes);
+// Use all routes
+app.use(require('./routes/routes'));
 
-const webserver = app.listen(process.env.PORT, () => {
+
+// ----- Database connection -----
+mongoose.connect(config.database.urlDB, config.database.options).then(
+    console.log('Connection to database successful'),
+    (err) => {
+        throw err;
+    }
+);
+
+// ----- Run Server -----
+const webserver = app.listen(config.server.port, () => {
    const port = webserver.address().port;
    console.log(`Server running on port ${port}`);
 }).on('error', (err) => {
-   throw new Error(`${err.errno}: Port ${process.env.PORT} is being used.`);
+   throw new Error(`${err.errno}: Port ${config.server.port} is being used.`);
 });
+
