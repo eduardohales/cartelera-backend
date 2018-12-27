@@ -9,8 +9,7 @@ exports.addUser = (req, res) => {
     let newUser = new userModel({
         name: body.name,
         email: body.email,
-        password: body.password ? bcrypt.hashSync(body.password, 10) : body.password,
-        role: body.role
+        password: body.password ? bcrypt.hashSync(body.password, 10) : body.password
     });
 
     // Store the new user in the database

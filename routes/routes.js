@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 
-// ----- Import al routes here -----
-const routes = require('../routes/index');
-const userRouter = require('../routes/user');
-
+// ----- Import all routes here -----
+const indexRoute = require('../routes/index');
+const userRoute = require('../routes/user');
 
 // ----- Use all routes here -----
-app.use(routes);
-app.use(userRouter);
+app.use(indexRoute);
+app.use(userRoute);
 
 module.exports = app;

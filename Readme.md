@@ -6,8 +6,9 @@ Codigo base de un servidor en nodejs para ver como se estructura y distribuyen l
 
 1. Instalar [mongoDB](https://www.mongodb.com/download-center?jmp=nav#community).
 2. Instalar [Node.js](https://nodejs.org/es/).
-3. `npm install` para instalar dependencias del proyecto.
-4. `npm start` o `node app.js` para iniciar la aplicación.
+3. Configurar el dominio, puerto y nombre de la base de datos de mongodb en el archivo config/config.js.
+4. `npm install` para instalar dependencias del proyecto.
+5. `npm start` o `node app.js` para iniciar la aplicación.
 
 ### Estructura
 

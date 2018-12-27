@@ -16,6 +16,7 @@ config.database = {
         useNewUrlParser: true
     }
 };
+
 config.database.urlDB = `mongodb://${config.database.domain}:${config.database.port}/${config.database.name}`;
 
 // ----- Express configuration -----
