@@ -11,7 +11,6 @@ config.expressConfig(app);
 // Use all routes
 app.use(require('./routes/routes'));
 
-
 // ----- Database connection -----
 mongoose.connect(config.database.urlDB, config.database.options).then(
     console.log('Connection to database successful'),
